@@ -570,6 +570,8 @@ h1,h2,h3{ font-family:var(--font-display); font-weight:700; margin:0; }
   padding-top:24px;
   font-size:.86rem; color:#8b7da8;
 }
+.footer-bottom a{ text-decoration:none; transition:color .18s ease; }
+.footer-bottom a:hover{ color:#fff; }
 
 /* ---------------- scroll reveal ----------------
    Yalnizca .js sinifi varken gizlenir; JS calismazsa

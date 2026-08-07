@@ -7,7 +7,7 @@ on the custom domain in `CNAME`.
 
 | Path        | Purpose                                                        |
 |-------------|----------------------------------------------------------------|
-| `/`         | Studio homepage — hero, Slide Block Jam! showcase, about, contact |
+| `/`         | Studio homepage — hero, Zing Blast! showcase, about, contact |
 | `/privacy/` | Privacy Policy (linked from the Google Play listing and in-game) |
 | `/terms/`   | Terms of Service (linked from the in-game settings panel)        |
 
@@ -26,14 +26,15 @@ CNAME                   custom domain for GitHub Pages
 
 pugo-wordmark.png       white PuGo Games wordmark  (dark backgrounds)
 pugo-wordmark-ink.png   deep violet wordmark       (light backgrounds)
-sbj-logo.png            Slide Block Jam! game logo
-sbj-icon.png            app icon, 512×512 (also the favicon)
+zing-blast-logo.png     Zing Blast! game logo
+zing-blast-icon.png     app icon, 512×512
+pugo-icon.png           PuGo Games favicon, 512×512 (white mark on violet)
 shot-1..4.png           gameplay screenshots, caption bars cropped off
 ```
 
-`pugo-logo.png`, `pugo-logos.png` and `slide-block-jam-icon.png` are the
-full-resolution originals the cropped assets above were generated from. They are
-no longer referenced by any page and can be removed if you want a leaner repo.
+`pugo-logo.png`, `pugo-logos.png`, `slide-block-jam-icon.png`, `sbj-logo.png` and
+`sbj-icon.png` are full-resolution or superseded originals. They are no longer
+referenced by any page and can be removed if you want a leaner repo.
 
 ## Notes
 

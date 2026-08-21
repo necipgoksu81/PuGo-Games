@@ -572,6 +572,7 @@ h1,h2,h3{ font-family:var(--font-display); font-weight:700; margin:0; }
 }
 .footer-bottom a{ text-decoration:none; transition:color .18s ease; }
 .footer-bottom a:hover{ color:#fff; }
+.footer-legal{ display:flex; align-items:center; flex-wrap:wrap; gap:20px; }
 
 /* ---------------- scroll reveal ----------------
    Yalnizca .js sinifi varken gizlenir; JS calismazsa

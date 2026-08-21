@@ -44,9 +44,11 @@ referenced by any page and can be removed if you want a leaner repo.
   still fully visible and every link still works.
 - Fonts (Baloo 2, Manrope) load from Google Fonts.
 - The Google Play button points at
-  `play.google.com/store/apps/details?id=com.pugogames.slideblockjam`. While the
-  game is still in closed testing that link 404s — the note under the button in
-  `index.html` says so, and should be deleted once the app is public.
+  `play.google.com/store/apps/details?id=com.pugogames.slideblockjam`. The game
+  went live in production on 21 August 2026, so that link resolves.
+- `app-ads.txt` must stay at the repository root. AdMob verifies app ownership by
+  fetching `pugogames.com/app-ads.txt`, so moving or deleting it breaks
+  verification and ad serving.
 
 ## Editing the legal pages
 

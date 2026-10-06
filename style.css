@@ -748,3 +748,149 @@ h1,h2,h3{ font-family:var(--font-display); font-weight:700; margin:0; }
   .site-nav,.site-footer{ display:none; }
   body{ background:#fff; color:#000; }
 }
+
+/* =========================================================
+   v2 (2026-10-06): softer, toy-like home page.
+   Only adds/overrides home-page pieces; legal pages untouched.
+   ========================================================= */
+:root{
+  --r-xl:40px;
+  --r-lg:30px;
+}
+
+/* hero: pastel sky with soft bubbles */
+.hero-v2{
+  background:
+    radial-gradient(60% 60% at 80% 20%, #fff4fb 0%, rgba(255,244,251,0) 70%),
+    linear-gradient(180deg, #e8e0ff 0%, #f6f1ff 55%, #ffffff 100%);
+}
+.hero-v2::before{ display:none; }
+.hero-v2 .bub{
+  position:absolute; border-radius:50%;
+  background:radial-gradient(circle at 30% 28%, rgba(255,255,255,.95) 0 9%, rgba(255,255,255,.35) 10% 60%, rgba(255,255,255,.12) 100%);
+  border:1px solid rgba(255,255,255,.7);
+  animation:floaty 9s ease-in-out infinite;
+  pointer-events:none;
+}
+.hero-v2 .b1{ width:120px; height:120px; left:3%; top:12%; animation-delay:-1s; }
+.hero-v2 .b2{ width:70px; height:70px; left:44%; top:7%; animation-delay:-3s; }
+.hero-v2 .b3{ width:170px; height:170px; right:-3%; top:46%; animation-delay:-5s; }
+.hero-v2 .b4{ width:54px; height:54px; left:38%; bottom:9%; animation-delay:-2s; }
+.hero-v2 .wrap{ position:relative; z-index:1; }
+.hero-v2 .phone{
+  border-radius:46px; padding:12px;
+  background:linear-gradient(160deg,#ffffff,#efe6ff);
+  box-shadow:0 30px 70px rgba(98,63,170,.28), 0 0 0 6px rgba(255,255,255,.65);
+}
+.hero-v2 .phone::after{ background:#e3d6fb; }
+.hero-v2 .phone img{ border-radius:34px; }
+.hero-v2 .icon-card{ border-radius:26px; border:3px solid #fff; box-shadow:0 14px 34px rgba(98,63,170,.22); }
+.hero-v2 .icon-card img{ border-radius:16px; }
+
+.btn-primary{ box-shadow:0 8px 0 var(--violet-deep), 0 14px 26px rgba(123,79,192,.32); }
+.btn-primary:hover{ transform:translateY(-2px); box-shadow:0 10px 0 var(--violet-deep), 0 18px 30px rgba(123,79,192,.38); }
+.btn-primary:active{ transform:translateY(5px); box-shadow:0 3px 0 var(--violet-deep); }
+
+.facts{ background:#fff; border-color:#efe9fb; }
+.fact{ background:#fff; }
+
+/* game feature card */
+.game-feature{
+  display:grid; grid-template-columns:1.1fr 1fr;
+  gap:clamp(28px, 5vw, 64px); align-items:center;
+  margin-bottom:56px;
+}
+.gf-art{
+  border-radius:var(--r-xl);
+  overflow:hidden;
+  border:6px solid #fff;
+  box-shadow:0 26px 60px rgba(61,100,210,.28), 0 0 0 1px #e6defa;
+  rotate:-1.5deg;
+}
+.gf-art img{ width:100%; }
+.gf-copy .btn{ margin-top:8px; }
+
+/* how it works */
+.how{ display:grid; grid-template-columns:repeat(3,1fr); gap:22px; }
+.how-step{
+  background:linear-gradient(180deg,#fff,#faf6ff);
+  border:2px solid #efe6ff;
+  border-radius:var(--r-lg);
+  padding:28px 26px 30px;
+  box-shadow:var(--sh-sm);
+}
+.hs-num{
+  display:inline-flex; align-items:center; justify-content:center;
+  width:44px; height:44px; border-radius:15px;
+  font-family:var(--font-display); font-weight:800; font-size:1.3rem; color:#fff;
+  background:linear-gradient(150deg,#ffb35c,#f0701d);
+  box-shadow:inset 0 3px 0 rgba(255,255,255,.45), 0 5px 0 #c4520f;
+  margin-bottom:18px;
+}
+.how-step:nth-child(2) .hs-num{ background:linear-gradient(150deg,#ff8ba7,#e03760); box-shadow:inset 0 3px 0 rgba(255,255,255,.45), 0 5px 0 #a8203f; }
+.how-step:nth-child(3) .hs-num{ background:linear-gradient(150deg,#8ee08a,#2aa84a); box-shadow:inset 0 3px 0 rgba(255,255,255,.45), 0 5px 0 #1a7a33; }
+.how-step h3{ font-size:1.25rem; margin-bottom:8px; }
+.how-step p{ margin:0; color:var(--muted); font-size:.98rem; }
+
+/* screenshot gallery: swipeable row */
+.gallery{
+  display:flex; gap:22px;
+  overflow-x:auto;
+  scroll-snap-type:x mandatory;
+  padding:8px max(28px, calc((100vw - 1180px) / 2 + 28px)) 34px;
+  -webkit-overflow-scrolling:touch;
+  scrollbar-width:thin;
+  scrollbar-color:#cdbcf2 transparent;
+}
+.g-shot{
+  flex:0 0 clamp(220px, 24vw, 280px);
+  margin:0; scroll-snap-align:center;
+  border-radius:32px; overflow:hidden;
+  border:5px solid #fff;
+  box-shadow:0 18px 40px rgba(98,63,170,.22), 0 0 0 1px #e6defa;
+  background:#fff;
+  transition:transform .3s cubic-bezier(.2,.8,.3,1);
+}
+.g-shot:hover{ transform:translateY(-8px) rotate(-1deg); }
+.g-shot img{ width:100%; }
+
+/* juice stand */
+.stand{ display:grid; grid-template-columns:.9fr 1.1fr; gap:clamp(28px, 5vw, 72px); align-items:center; }
+.stand-art{
+  background:radial-gradient(circle at 50% 45%, #fff 0 30%, #e4f7ee 31% 62%, #cdeee0 63%);
+  border-radius:50%; aspect-ratio:1; display:flex; align-items:center; justify-content:center;
+  padding:9%;
+  box-shadow:0 26px 60px rgba(42,168,100,.22);
+}
+.stand-art img{ width:100%; filter:drop-shadow(0 14px 18px rgba(90,40,20,.22)); }
+.fruit-row{ display:flex; flex-wrap:wrap; gap:10px; margin-top:26px; }
+.fruit{
+  font-weight:800; font-size:.86rem; color:#fff;
+  padding:8px 16px; border-radius:100px;
+  box-shadow:inset 0 2px 0 rgba(255,255,255,.4), 0 4px 0 rgba(0,0,0,.18);
+}
+.fruit.f1{ background:#ef476f; } .fruit.f2{ background:#3d6bf0; } .fruit.f3{ background:#e8b610; color:#4a3500; }
+.fruit.f4{ background:#3cb54a; } .fruit.f5{ background:#8a4fd6; } .fruit.f6{ background:#f2831f; }
+
+/* studio banner card */
+.studio-card.studio-banner{ padding:0; background:none; border-radius:var(--r-xl); border:6px solid #fff; box-shadow:0 26px 60px rgba(98,63,170,.28), 0 0 0 1px #e6defa; }
+.studio-card.studio-banner::before{ display:none; }
+.studio-card.studio-banner img{ max-width:none; width:100%; margin:0; }
+
+.sec-soft{ background:linear-gradient(180deg,#f7f3ff 0%, #fbf8ff 100%); }
+.feature, .shot{ border-width:2px; }
+
+@media (max-width:900px){
+  .game-feature{ grid-template-columns:1fr; }
+  .gf-art{ rotate:0deg; }
+  .how{ grid-template-columns:1fr; }
+  .stand{ grid-template-columns:1fr; }
+  .stand-art{ max-width:360px; margin:0 auto; }
+}
+@media (max-width:760px){
+  .gallery{ padding-left:20px; padding-right:20px; }
+}
+
+/* juice girl: crop inside the circle so the render's own canvas edges stay outside */
+.stand-art{ overflow:hidden; padding:0; }
+.stand-art img{ width:120%; max-width:none; margin:4% 0 0 0; }
